@@ -143,7 +143,8 @@ const flujoempresas = addKeyword('Servicio a Empresas') .addAnswer('*Servicio CO
 const flujodomicilios = addKeyword('Laboratorio a domicilio') .addAnswer([
         'Con *Labo a Domi* tenemos la mayor cobertura a domicilio.', 
         'cubrimos toda la Capital Federal y la mayor parte del Conurbano'])
-    .addAnswer('Además para los pacientes PAMI (Red COFYB), o si tu orden particular supera los $5.000 la visita a domicilio es sin cargo en CABA'). addAnswer('Por favor indicanos la dirección exacta de tu domicilio 🏠 y lo antes posible un asistente se comunicara contigo')
+    .addAnswer('Además para los pacientes PAMI (Red COFYB), o si tu orden particular supera los $5.000 la visita a domicilio es sin cargo en CABA')
+    .addAnswer('Por favor completa el siguiente formulario para solicitar y nos comunicaremos contigo', 'https://forms.gle/QBNCtpWiHKnkZrFx6')
 
 
 const flujosedes = addKeyword('Sedes y Horarios') .addAnswer('*Contamos con 4 sedes para estar siempre cerca*')
@@ -164,11 +165,9 @@ const flujoooss = addKeyword('Obras Sociales y Prepagas').addAnswer('Podes ver e
 
 const flujoayuno = addKeyword('Indicaciones y Ayuno').addAnswer('Puedo ayudarte con todas estas indicaciones', {buttons : [{body:'Sangre'}, {body:'Orina'},  {body:'Cultivos'},]})
 
-const flujosangre = addKeyword('Sangre') .addAnswer(['Los análisis de clínicos por norma general requieren 8hs de ayuno, con excepción de algunos.','incluiremos en el siguiente listado aquellos estudios con requerimientos especiales.']) .addAnswer('Escribi solo la letra inicial del estudio del que desea mas información.')
-    .addAnswer(['*a* Prolactina','*b* Trigliceridos, Colesterol, HDL, LDL, Perfil lipidico o lipidograma'],
+const flujosangre = addKeyword('Sangre') .addAnswer(['Los análisis de clínicos por norma general requieren 8hs de ayuno, con excepción de algunos.','incluiremos en el siguiente listado aquellos estudios con requerimientos especiales.']) 
+    .addAnswer(['Para tener mas información podes acceder a www.laboraotiospotorno.com/indicaciones'],
 )
-const flujoa = addKeyword('Prolactina') .addAnswer('Ademas de las 8 hs de ayuno es indispensable concurrir al Laboratorio entre las 8 y las 8:30 hs, y permanecer unos 15 minutos relada en el asiento antes de la extracción.')
-const flujob = addKeyword('b') .addAnswer('Todos los estudios relacionados al metabolismo de los Lipidos requieren 12 hs de ayuno.')
 const flujoorina = addKeyword('Orina') .addAnswer('')
 
 const flujocultivos = addKeyword('Cultivos') .addAnswer('')
