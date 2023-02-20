@@ -144,7 +144,7 @@ const flujodomicilios = addKeyword('Laboratorio a domicilio') .addAnswer([
         'Con *Labo a Domi* tenemos la mayor cobertura a domicilio.', 
         'cubrimos toda la Capital Federal y la mayor parte del Conurbano'])
     .addAnswer('Además para los pacientes PAMI (Red COFYB), o si tu orden particular supera los $5.000 la visita a domicilio es sin cargo en CABA')
-    .addAnswer('Por favor completa el siguiente formulario para solicitar y nos comunicaremos contigo', 'https://forms.gle/QBNCtpWiHKnkZrFx6')
+    .addAnswer('Por favor completa el siguiente formulario para solicitar y nos comunicaremos contigo https://forms.gle/QBNCtpWiHKnkZrFx6')
 
 
 const flujosedes = addKeyword('Sedes y Horarios') .addAnswer('*Contamos con 4 sedes para estar siempre cerca*')
