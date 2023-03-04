@@ -8,33 +8,30 @@ const MockAdapter = require('@bot-whatsapp/database/mock')
 
 
 const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,', 'menú', 'menu', 'buen dia','buenos dias','Buenos','Buen', 'buen día', 'buenas'])
-    .addAnswer('Hola, soy Docty 🤖 el asistente virtual del *Laboratorio Spotorno* y *Medicina Diagnóstica*')
-    .addAnswer('En la opción de *Laboratorio* podras resolver todas tus dudas, solicitar turnos o agendar una visita a domicilio')
-    .addAnswer('En  *Estudios y Medicos* encontraras Ecografias, Ecodoppler, Radiografias (Rx), Mamografías, y turnos con nuestros Médicos Clínicos, Cardiólogos, Ginecólogos, Traumatologos entre otros')
-    .addAnswer('En *Otras consultas* encontraras acceso a tus resultados, nuestras sedes y horarios, indicaciones médicas para tus análisis o comunicarte con uno de nuestros asesores')
-    .addAnswer('Seleccioná una de las siguientes opciones', 
+    .addAnswer('Hola, soy Docty 🤖 el asistente virtual del *Laboratorio Spotorno* y *Medicina Diagnóstica*','Seleccioná una de las siguientes opciones',
+
         {buttons : [
             {body:'Laboratorio 💉'}, 
             {body:'Estudios y Médicos 👩‍⚕️👨‍⚕️'},
-            {body:'Otras consultas 💡'}]})
-
-
-    const flujomedico = addKeyword('Estudios y Médicos 👩‍⚕️👨‍⚕️')
-        .addAnswer('*Cartilla*')
-        .addAnswer('En la opción de *Laboratorio* podras resolver todas tus dudas, solicitar turnos o agendar una visita a domicilio')
-        .addAnswer('En *Estudios y Medicos* encontraras Ecografias, Ecodoppler, Radiografias (Rx), Mamografías, y turnos con nuestros Médicos Clínicos, Cardiólogos, Ginecólogos, Traumatologos entre otros')
+            {body:'Otras consultas 💡'}]}) 
+            .addAnswer('En la opción de *Laboratorio* podrás resolver todas tus dudas, solicitar turnos o agendar una visita a domicilio')
+        .addAnswer('En  *Estudios y Médicos* encontraras Ecografías, Ecodoppler, Radiografías (Rx), Mamografías, y turnos con nuestros Médicos Clínicos, Cardiólogos, Ginecólogos, Traumatólogos entre otros')
         .addAnswer('En *Otras consultas* encontraras acceso a tus resultados, nuestras sedes y horarios, indicaciones médicas para tus análisis o comunicarte con uno de nuestros asesores')
+
+
+    const flujomedico = addKeyword('Estudios y Médicos 👩‍⚕️👨‍⚕️').addAnswer('*Cartilla*')
         .addAnswer('Seleccioná una de las siguientes opciones', 
         {buttons : [
-            {body:'Solicita un turno 👨‍⚕️'}, 
+            {body:'Solicitá un turno 👨‍⚕️'}, 
             {body:'Cartilla Médica'},
             {body:'Otras consultas 💡'}]})
+        .addAnswer('En *Cartilla Médica* Podrás ver los turnos disponibles para nuestros Médicos y estudios Médicos')
 
-            const flujosedemed = addKeyword('Solicita un turno 👨‍⚕️') .addAnswer('Ahora podras solicitar un turno completando un formulario muy simple, entra a "-Forms-"')
+            const flujosedemed = addKeyword('Solicita un turno 👨‍⚕️') .addAnswer('Ahora podrás solicitar un turno completando un formulario muy simple, entra a "-Forms-"')
 
-            const flujocartilla = addKeyword('Cartilla Médica') .addAnswer('')
+            const flujocartilla = addKeyword('Cartilla Médica') .addAnswer('Consultanos telefonicamente llamando a este numero en el horario de 10 a 16 hs')
 
-                const flujomd = addKeyword('Dias y horario por medico y estudio') .addAnswer('')
+                const flujomd = addKeyword('Dias y horario por médico y estudio') .addAnswer('')
 
                 const flujocmu = addKeyword('') .addAnswer('')
 
@@ -43,23 +40,21 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
 
 
     const flujolaboratorio = addKeyword(['Laboratorio 💉'])
-    .addAnswer('Desde aquí podras gestionar turnos, agendar visitas a domicilio, cotizar tus ordenes e incluso crear una que se adapte a vos.')
-    .addAnswer('En la opcion de *Otras consultas 💡* encontraras acceso a tus resultados, nuestras sedes y horarios, indicaciones médicas para tus análisis o comunicarte con uno de nuestros asesores')
+    .addAnswer('Podras gestionar turnos, agendar visitas a domicilio, cotizar tus ordenes y también crear una que se adapte a vos.')
     .addAnswer('Seleccioná una de las siguientes opciones', 
         {buttons : [
         {body:'Laboratorio presencial 🩸'}, 
-        {body:'Laboratorio a Domicilio'},
-        {body:'Otras consultas 💡'}]})
+        {body:'Laboratorio a Domicilio'}]})
 
         // LABORATORIO PRESENCIAL
 
-        const flujolab = addKeyword('Laboratorio presencial 🩸') .addAnswer('Elgí una opción',
+        const flujolab = addKeyword('Laboratorio presencial 🩸') .addAnswer('Elegí una opción',
             {buttons : [
             {body:'COVID 19'},   
             {body:'Solicitar un turno 💉'},
             {body:'Cotizar en linea'}]})
 
-            const flujocovid = addKeyword('COVID 19') .addAnswer('Podes realizar cualquiera de estos estudios en nuestras sedes, o bien podemos visitarte en tu domicilio').addAnswer('Elegi una opcion', {buttons : [
+            const flujocovid = addKeyword('COVID 19') .addAnswer('Puedes realizar cualquiera de estos estudios en nuestras sedes, o bien podemos visitarte en tu domicilio').addAnswer('Elegí una opcion', {buttons : [
                 {body:'PCR'}, 
                 {body:'Test Rápido'},  
                 {body:'Servicio COVID a Empresas'}]})
@@ -68,17 +63,17 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                 const flujopcr = addKeyword('PCR') 
                     .addAnswer('*PCR COVID 19*') .addAnswer(['La muestra se obtiene mediante un *hisopado nasofaringeo* que no requiere ayuno.', 
                         'El resultado estará disponible en el día (si la muestra se toma por la mañana).', 
-                        'No es necesario solicitar turno, ni tener orden médica. Podes acercarte a cualquiera de nuestras sedes o pactar una *Visita a Domicilio.*'])
+                        'No es necesario solicitar turno, ni tener orden médica. Puedes acercarte a cualquiera de nuestras sedes o pactar una *Visita a Domicilio.*'])
                     .addAnswer(['El valor de la determinación es de *$8.500* y la visita a domicilio en CABA de *$1.000*.', 
                         'En GBA el valor puede variar segun la distancia, si queres una cotización dejanos tu dirección en el siguiente formulario','https://forms.gle/QBNCtpWiHKnkZrFx6'])
     
                 const flujotr = addKeyword('Test Rápido') 
-                    .addAnswer('*Test Rápido de Antigenos COVID 19*')
+                    .addAnswer('*Test Rápido de Antígenos COVID 19*')
                     .addAnswer(['La muestra se obtiene mediante un *hisopado nasofaringeo* que no requiere ayuno.', 
                         'Este método arroja el resultado en el momento y es ideal para pacientes sintomaticos 🤒.', 
-                        'No es necesario solicitar turno, ni tener orden médica. Podes acercarte a cualquiera de nuestras sedes o pactar una *Visita a Domicilio.*'])
+                        'No es necesario solicitar turno, ni tener orden médica. Puedes acercarte a cualquiera de nuestras sedes o pactar una *Visita a Domicilio.*'])
                     .addAnswer(['El valor de la determinación es de *$3.500* y la visita a domicilio en CABA de *$1.000*.', 
-                        'En GBA el valor puede variar segun la distancia, si queres una cotización dejanos tu dirección en el siguiente formulario','https://forms.gle/QBNCtpWiHKnkZrFx6'])
+                        'En GBA el valor puede variar segun la distancia, si quieres una cotización dejanos tu dirección en el siguiente formulario','https://forms.gle/QBNCtpWiHKnkZrFx6'])
     
                 const flujoempresas = addKeyword('Servicio COVID a Empresas') 
                     .addAnswer('*Servicio COVID 19*') .addAnswer([
@@ -88,7 +83,7 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                     .addAnswer('Por favor, dejanos los datos de contacto y un asistente se pondrá en contacto con Ustedes lo antes posible')
     
 
-            const flujoturno = addKeyword('Solicitar un turno 💉') .addAnswer('No es necesario solicitar un turno para la atencion presencial en ninguna de nuestras sedes, en *"Sedes y Horarios"* encontraras los horarios de atención.').addAnswer('', {buttons : [
+            const flujoturno = addKeyword('Solicitar un turno 💉') .addAnswer('No es necesario solicitar un turno para la atención presencial en ninguna de nuestras sedes').addAnswer('Elegí una de las siguientes opciones', {buttons : [
                 {body:'Sedes y Horarios'}, 
                 {body:'Indicaciones y Ayuno'},
                 {body:'Requiero asistencia'}]})
@@ -105,8 +100,8 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                 {body:'Tengo una orden médica'},    
                 {body:'No tengo una orden'}]})
 
-                const flujotengo = addKeyword('Tengo una orden médica') .addAnswer('Podes enviarnos una foto de tu orden o bien a través de nuestro web realizar una autogestión')
-                    .addAnswer('Elgí una opción', {buttons : [
+                const flujotengo = addKeyword('Tengo una orden médica') .addAnswer('Puedes enviarnos una foto de tu orden o bien a través de nuestro web realizar una autogestión')
+                    .addAnswer('Elegí una opción', {buttons : [
                         {body:'Enviar foto de la orden'},
                         {body:'Autogestión'}, 
                         {body:'Obras Sociales y Prepagas'}]})
@@ -114,16 +109,16 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                     
                     const flujofoto = addKeyword('Enviar foto de la orden') .addAnswer('Podemos cotizar tu orden en forma fácil y rápida, envianos una foto de la orden por acá y nos contactaremos contigo')
 
-                    const flujoauto = addKeyword('Autogestión') .addAnswer('Ingresá a www.laboratoriospotorno.com/estudios y selecciona los anális que deseas realizar') 
-                        .addAnswer('Si necesitas ayuda o tenes alguna consulta al momento de hacerlo podes comunicarte con un asistente con el siguiente botón', {buttons : [
+                    const flujoauto = addKeyword('Autogestión') .addAnswer('Ingresá a www.laboratoriospotorno.com/estudios y seleccioná los análisis que deseas realizar') 
+                        .addAnswer('Si necesitas ayuda o tenes alguna consulta al momento de hacerlo Puedes comunicarte con un asistente con el siguiente botón', {buttons : [
                             {body:'Requiero asistencia'}]})
 
                             //requiero asistencia en otras consultas
 
                 
-                const flujonotengo = addKeyword('No tengo una orden') .addAnswer(['Si queres hacerte un chequeo, tenemos uno que se adapta a vos',
+                const flujonotengo = addKeyword('No tengo una orden') .addAnswer(['Si quieres hacerte un chequeo, tenemos uno que se adapta a vos',
                         '*Conoce los Controles de salud ingresando a www.laboratoriospotorno.com/chequeos.*'])
-                    .addAnswer('Tambien armar una Orden de análisis perzonalizada y cotizarla en tiempo real ingresando en www.laboratoriospotorno.com/estudios .')
+                    .addAnswer('También armar una Orden de análisis personalizada y cotizarla en tiempo real ingresando en www.laboratoriospotorno.com/estudios .')
                     .addAnswer('o bien comunicate con nosotros', {buttons : [
                         {body:'Requiero asistencia'}]})
 
@@ -132,7 +127,7 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                         {body:'Laboratorio Clinico OOSS'},   
                         {body:'Consultas y estudios Médicos OOSS'}]})
                     
-                        const flujooslab = addKeyword('Laboratorio Clinico OOSS') .addAnswer('Atendemos más de 100 OOSS entre las que se destacan PAMI, IOMA, Galenos, Swiss Medical, Emergencias, Poder Judicial, IOSFA, UPCN entre otras').addAnswer('Podes ver el listado completo de las en:') .addAnswer('www.laboratoriospotorno.com/ooss')
+                        const flujooslab = addKeyword('Laboratorio Clinico OOSS') .addAnswer('Atendemos más de 100 OOSS entre las que se destacan PAMI, IOMA, Galenos, Swiss Medical, Emergencias, Poder Judicial, IOSFA, UPCN entre otras').addAnswer('Puedes ver el listado completo de las en:') .addAnswer('www.laboratoriospotorno.com/ooss')
                     
                         const flujoosmed = addKeyword('Consultas y estudios Médicos OOSS') .addAnswer('Emergencias Salud, SPS Mutual, ODOP')
 
@@ -145,7 +140,7 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
 
             //COVID 19 esta desarrollado LABORATORIO PRESENCIAL
 
-            const flujextraccion = addKeyword('Extracciones a domicilio') .addAnswer('Podes realizar cualquiera de estos estudios en nuestras sedes, o bien podemos visitarte en tu domicilio') .addAnswer('Elegi una opcion', {buttons : [
+            const flujextraccion = addKeyword('Extracciones a domicilio') .addAnswer('Puedes realizar cualquiera de estos estudios en nuestras sedes, o bien podemos visitarte en tu domicilio') .addAnswer('Elegí una opción', {buttons : [
                 {body:'Agendar turno'}, 
                 {body:'Cotización de domicilio'},  
                 {body:'Indicaciones y Ayuno'}]})
@@ -178,10 +173,10 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
 
                 //servicio COVID en labo a domi
 
-        const flujoresultados = addKeyword('Mis resultados ✉️').addAnswer('Podes acceder a tus resultados desde', 'Necesitas el código que se encuentra en la parte inferior del "ticket de retiro".') .addAnswer ('www.misinformes.com.ar') 
-            .addAnswer('En caso de dificultades para acceder o visualizarlos podes solicitar asistencia perzonalizada',{buttons : {body:'Requiero asistencia'}},)
+        const flujoresultados = addKeyword('Mis resultados ✉️').addAnswer('Puedes acceder a tus resultados desde', 'Necesitas el código que se encuentra en la parte inferior del "ticket de retiro".') .addAnswer ('www.misinformes.com.ar') 
+            .addAnswer('En caso de dificultades para acceder o visualizarlos puedes solicitar asistencia personalizada',{buttons : {body:'Requiero asistencia'}},)
 
-        const flujomas = addKeyword('Más..') .addAnswer('En "Cobertura Médica" encontraras el listado completo de las Obras Sociales y Prepagas con las cuales trabajamos').addAnswer('Elgí una opción',
+        const flujomas = addKeyword('Más..') .addAnswer('En "Cobertura Médica" encontraras el listado completo de las Obras Sociales y Prepagas con las cuales trabajamos').addAnswer('Elegí una opción',
             {buttons : [
             {body:'Requiero asistencia'},
             {body:'Sedes e Indicaciones'},
@@ -200,7 +195,7 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                 const flujocorreo = addKeyword ('Correo electrónico')
                     .addAnswer('Envianos un email a *info@laboratoriospotorno.com*')
 
-                const flujotel = addKeyword ('Telefonicamente').addAnswer('Nuestro horario de atencion telefonica es de 9 a 19 hs.') 
+                const flujotel = addKeyword ('Telefonicamente').addAnswer('Nuestro horario de atención telefonica es de 9 a 19 hs.') 
                     .addAnswer(['Por incovenientes con los reslutados debes comunicarte con la sede en la que ha sido atendido',
                         'En caso de encontrarse fuera del horario de atención de la sede o tratarse de una visita a domicilio.'])
                     .addAnswer('comuniquese al *1126005711*')
@@ -214,7 +209,7 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
                     .addAnswer(['*Medicina Diagnóstica*', 'Alberti 631 - Once (CABA).', '*extracción* Lunes a Viernes de 8 a 11 hs, *atención* Lunes a Vieres de 8 a 16hs.'])
                     .addAnswer(['*Centro Médico Universal*', 'Av Lope de Vega 2287 - Devoto (CABA).', '*extracción* Lunes a Viernes de 8 a 11 hs.', '*atención* Lunes a Vieres de 8 a 16hs.'])
 
-                const flujoayuno = addKeyword('Indicaciones y Ayuno').addAnswer('Podes encontrar toda la inforamción en www.laboratoriospotorno.com/indicaciones')
+                const flujoayuno = addKeyword('Indicaciones y Ayuno').addAnswer('Puedes encontrar toda la inforamción en www.laboratoriospotorno.com/indicaciones')
 
 
                 //Cobertura = OOSS y Prepagas
