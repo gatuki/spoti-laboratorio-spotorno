@@ -221,7 +221,7 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flujoprincipal,flujoempresas2,flujopami, flujointermedio,flujooslab,flujoosmed, flujolaboratorio,flujomedico, flujcotizadomi, flujoturno, flujextraccion, flujoturnodomi, flujomas,flujoauto,flujofoto,flujosangre, flujoconsultas, flujohumano, flujocovid, flujodomicilios, flujosedes, flujoorden, flujoooss,flujoresultados,flujoayuno, flujoempresas,flujopcr,flujotr,flujocorreo,flujotengo,flujonotengo,flujotel, flujolab,flujocotizacion,flujoasistencia])
+    const adapterFlow = createFlow([flujoprincipal,flujoempresas2,flujopami, flujointermedio,flujooslab,flujoosmed, flujolaboratorio,flujomedico, flujcotizadomi, flujoturno, flujextraccion, flujoturnodomi, flujomas,flujoauto,flujofoto, flujoconsultas, flujohumano, flujocovid, flujodomicilios, flujosedes, flujoooss,flujoresultados,flujoayuno, flujoempresas,flujopcr,flujotr,flujocorreo,flujotengo,flujonotengo,flujotel, flujolab,flujocotizacion,flujoasistencia])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({
