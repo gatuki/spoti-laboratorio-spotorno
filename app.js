@@ -8,9 +8,7 @@ const MockAdapter = require('@bot-whatsapp/database/mock')
 
 
 const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,', 'menú', 'menu', 'buen dia','buenos dias','Buenos','Buen', 'buen día', 'buenas'])
-    .addAnswer('Hola, soy Docty 🤖 el asistente virtual del *Laboratorio Spotorno* y *Medicina Diagnóstica*','Seleccioná una de las siguientes opciones',
-
-        {buttons : [
+    .addAnswer(['Hola, soy Docty 🤖 el asistente virtual del *Laboratorio Spotorno* y *Medicina Diagnóstica*'] ).addAnswer('Seleccioná una de las siguientes opciones', {buttons : [
             {body:'Laboratorio 💉'}, 
             {body:'Estudios y Médicos 👩‍⚕️👨‍⚕️'},
             {body:'Otras consultas 💡'}]}) 
@@ -20,11 +18,11 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
 
 
     const flujomedico = addKeyword('Estudios y Médicos 👩‍⚕️👨‍⚕️').addAnswer('*Cartilla*')
-        .addAnswer('Seleccioná una de las siguientes opciones', 
+        .addAnswer(['Seleccioná una de las siguientes opciones', 
         {buttons : [
             {body:'Solicitá un turno 👨‍⚕️'}, 
             {body:'Cartilla Médica'},
-            {body:'Otras consultas 💡'}]})
+            {body:'Otras consultas 💡'}]}])
         .addAnswer('En *Cartilla Médica* Podrás ver los turnos disponibles para nuestros Médicos y estudios Médicos')
 
             const flujosedemed = addKeyword('Solicita un turno 👨‍⚕️') .addAnswer('Ahora podrás solicitar un turno completando un formulario muy simple, entra a "-Forms-"')
@@ -41,10 +39,10 @@ const flujoprincipal = addKeyword(['hola','Hola','hola!','Hola!','hola,','Hola,'
 
     const flujolaboratorio = addKeyword(['Laboratorio 💉'])
     .addAnswer('Podras gestionar turnos, agendar visitas a domicilio, cotizar tus ordenes y también crear una que se adapte a vos.')
-    .addAnswer('Seleccioná una de las siguientes opciones', 
+    .addAnswer(['Seleccioná una de las siguientes opciones', 
         {buttons : [
         {body:'Laboratorio presencial 🩸'}, 
-        {body:'Laboratorio a Domicilio'}]})
+        {body:'Laboratorio a Domicilio'}]}])
 
         // LABORATORIO PRESENCIAL
 
